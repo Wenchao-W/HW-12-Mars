@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Our own CSS stylesheet -->
+  <!-- <link rel="stylesheet" href="../static/css/style.css" > -->
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+    <!-- Start of container -->
+    <div class="container">
+      <section class="row">
+        <div class="col-md-12">
+          <article class="description-content">
+            <h1 class="description-header">Latest Mars News</h1>
+            <hr class="description-hr"/>
+            <h3 class="description-header">{{mars.news.title}}</h3>
+            <p>{{mars.news.p}}</p>
+          </article>
+        </div>
+                
+      </section>
+      <!-- Start of Visualizations imageNav Area -->
+      <section class="row2">
+          <div class="col-md-4">
+            <h2 class="row2-header">Featured Mars Image</h2>
+            <p>click the picture for the full size picture</p>
+            <hr />
+            <div id="images">
+              <article class="description-content">
+              <a href="{{ mars.img }}"><img style="width:640px;height:400px;" src="{{ mars.img }}" alt="Featured mars image"></a>
+              </article>
+            </div>
+           
+          </div>
+          <div class="col-md-4 pull-right">
+              <div class="boxed">
+                <h3 class="row2-header">Current Weather on Mars</h3>
+                <p>{{ mars.weather}}</p>
+              </div>
+              
+              <hr />
+              <h3 class="row2-header">Mars Facts</h3>
+              <p>{{ mars.fact|safe }}</p>
+          </div>
+        </section>
+        <!-- End of the Visualizations imageNav Area -->
+    </div>
+    <hr />
+    <div class="container">
+        <article class="description-content row">
+          <div class="col-xs-12 text-center">
+            <h1 class="description-header">Mars Hemispheres</h1>
+            <hr />
+          </div>
+          
+          <div class="col-md-6">
+            <div class="boxed">
+            <a href="/"><img src="{{ mars.hemispheres[0].img_url }}" alt="/" class="comparison-image img-responsive"></a>
+            <h3 class="row3-header">{{ mars.hemispheres[0].title }}</h3>
+            <hr class="visible-xs visible-sm">
+            </div>
+          </div>
+          <div class="col-md-6">
+              <div class="boxed">
+              <a href="/"><img src="{{ mars.hemispheres[1].img_url }}" alt="/" class="comparison-image img-responsive"></a>
+              <h3 class="row3-header">{{ mars.hemispheres[1].title }}</h3>
+              <hr class="visible-xs visible-sm">
+              </div>
+            </div>
+          <div class="col-md-6">
+            <div class="boxed">
+            <a href="/"><img src="{{ mars.hemispheres[2].img_url }}" alt="/" class="comparison-image img-responsive"></a>
+            <h3 class="row3-header">{{ mars.hemispheres[2].title }}</h3>
+            <hr class="visible-xs visible-sm">
+            </div>
+          </div>
+          <div class="col-md-6">
+              <div class="boxed">
+              <a href="/"><img src="{{ mars.hemispheres[3].img_url }}" alt="/" class="comparison-image img-responsive"></a>
+              <h3 class="row3-header">{{ mars.hemispheres[3].title }}</h3>
+              <hr class="visible-xs visible-sm">
+              </div>
+            </div>
+        </article>
+      </div>
+      <hr />
+    <!-- End of container -->
+    <!-- <img src="{{ mars.img }}" alt="/"> -->
+
+  </div>
+  </div>
+</body>
+
+</html>
