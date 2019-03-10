@@ -75,7 +75,7 @@ def weather():
 
 def fact():
     # URL of page to be scraped
-    url = 'http://space-facts.com/mars/'
+    url = 'https://space-facts.com/mars/'
     
     # Scrape by pandas
     tables = pd.read_html(url)  
